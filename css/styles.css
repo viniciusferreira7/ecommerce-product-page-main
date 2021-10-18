@@ -1,3 +1,17 @@
+/*Galeria*/
+
+.galeria{
+    width:100%;
+}
+
+.main-image{
+    width:100%;
+    padding-top: 75%;
+    background-image: url(../imagens/image-product-1-thumbnail.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 
 /*Informaçoes*/
 
@@ -46,9 +60,10 @@
 
 .price > .origin-price{
     width:100%;
-    max-width:55.24px;
+    max-width:59.24px;
     position: relative;
     top:-10px;
+    text-align: center;
 }
 
 .origin-price p{
@@ -74,13 +89,13 @@
     width:28%;
     display:flex;
     background-color: #f7f7fe;
-    padding:8px 0;
     border-radius:8px;
 }
 
 .amount p{
     width:33%;
     margin: 0 auto;
+    padding:8px 0;
     font-weight: bold;
     text-align: center;
 }
@@ -90,24 +105,36 @@
     cursor:pointer;
 }
 
+.amount p:first-of-type:hover, .amount p:last-of-type:hover{
+   background-color: #ebe6e6;
+   border-radius: 8px;
+}
+
 .cart{
-    width:68%;
+    width:53%;
     display: flex;
     justify-content: center;
     margin:0 2%;
+    padding:8px 0;
     align-items:center;
     background-color:#ff7d1b;
-    color:white;
+    border-radius:8px;
     cursor:pointer;
+    -webkit-box-shadow: 0px 14px 26px 1px rgba(255,125,27,0.32); 
+    box-shadow: 0px 14px 26px 1px rgba(255,125,27,0.32);
 }
 
-.cart svg{
-    text-align: right;
-    background-color:navy;
-    margin:0 auto;
+.cart:hover{
+    background-color:#f3791c;
 }
+
+/*Obs:
+    Decidir se a font-weight via ser bold ou outra*/
+
 .cart p{
+    font-weight:500;
+    color:white;
     margin:0 auto;
-    background-color:navy;
 }
+
 
