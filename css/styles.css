@@ -1,5 +1,6 @@
 header nav{
     border-bottom: 1px solid rgba(228, 228, 228, 0.6);
+    padding-bottom: 0 !important;
 }
 
 header .navbar-brand{
@@ -11,10 +12,18 @@ header .navbar-brand{
 
 header .navbar-nav a{
     margin-right:20px;
+    padding-bottom: 15px;
+    position: relative;
+    top: 4px;
+}
+
+header .navbar-nav a:hover{
+    border-bottom: 3px solid #f3791c;
+    padding-bottom: 12px;
 }
 
 main{
-    padding-top:8% ;
+    padding-top:5% ;
 }
 
 /*Galeria*/
@@ -31,11 +40,13 @@ main{
     background-position: center;
     background-size: cover;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .slides{
     width:100%;
     display: flex;
+    padding-top:10px;
 }
 
 .slides .image-wraper{
@@ -49,6 +60,12 @@ main{
     width:100%;
     padding-top: calc(100% * 1);
     border-radius:8px;
+    cursor: pointer;
+}
+
+.slides .image-single:hover{
+    border:3px solid #f3791c;
+    padding-top: calc((100% * 1) - 6px );
 }
 
 
@@ -184,7 +201,7 @@ main{
 }
 
 .cart:hover{
-    background-color:#f3791c;
+    background-color:#ee761a;
 }
 
 /*Obs:
@@ -194,6 +211,20 @@ main{
     font-weight:500;
     color:white;
     margin:0 auto;
+}
+
+@media screen and (max-width:992px){
+    
+header .navbar-nav a{
+    margin-right:20px;
+    padding-bottom:0;
+    position:static;
+}
+
+header .navbar-nav a:hover{
+    border-bottom:0;
+    padding-bottom: 0;
+}
 }
 
 
