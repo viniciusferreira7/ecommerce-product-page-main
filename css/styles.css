@@ -1,9 +1,14 @@
-header nav{
-    border-bottom: 1px solid rgba(228, 228, 228, 0.6);
+header .container{
+    border-bottom: 1px solid rgba(228, 228, 228, 0.6) !important ;
+
+}
+
+
+header nav:first-of-type{
     padding-bottom: 0 !important;
 }
 
-header .navbar-brand{
+header .navbar-brand:first-of-type{
     font-weight:700;
     font-family: "Prompt";
     font-size:30px;
@@ -20,6 +25,23 @@ header .navbar-nav a{
 header .navbar-nav a:hover{
     border-bottom: 3px solid #f3791c;
     padding-bottom: 12px;
+}
+
+header .user{
+    position: relative;
+    top:22px;
+    color:rgba(0,0,0,.55);
+    display: flex;
+}
+
+.user div{
+    margin:0 10px;
+    font-size:25px;
+    cursor: pointer;
+}
+
+.user .profile svg{
+    font-size:35px;
 }
 
 main{
@@ -215,16 +237,27 @@ main{
 
 @media screen and (max-width:992px){
     
-header .navbar-nav a{
-    margin-right:20px;
-    padding-bottom:0;
-    position:static;
-}
+    header .navbar-nav a{
+        margin-right:20px;
+        padding-bottom:0;
+        position:static;
+    }
 
-header .navbar-nav a:hover{
-    border-bottom:0;
-    padding-bottom: 0;
-}
+    header .navbar-nav a:hover{
+        border-bottom:0;
+        padding-bottom: 0;
+    }
+
+    #logo1{
+        padding-left:15px;
+    }
+
+    .menuMobile{
+        position: relative;
+        left:-50px;
+        top: -45px;
+    }
+
 }
 
 
