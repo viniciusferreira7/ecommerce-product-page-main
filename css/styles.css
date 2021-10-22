@@ -27,21 +27,28 @@ header .navbar-nav a:hover{
     padding-bottom: 12px;
 }
 
-header .user{
+header .user-wraper{
+    width:100%;
     position: relative;
-    top:22px;
-    color:rgba(0,0,0,.55);
+    top:20px;
     display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
-.user div{
-    margin:0 10px;
-    font-size:25px;
+.user-wraper > div{
     cursor: pointer;
+    margin:0 20px;
 }
 
-.user .profile svg{
-    font-size:35px;
+.user-wraper .profile{
+    width:35px ;
+    height:35px;
+    border-radius: calc(35px /2);
+    background-color:#686767;
+    background-image: url(../imagens/eu.jfif);
+    background-position: center;
+    background-size: cover;
 }
 
 main{
@@ -83,6 +90,7 @@ main{
     padding-top: calc(100% * 1);
     border-radius:8px;
     cursor: pointer;
+    position: relative;
 }
 
 .slides .image-single:hover{
@@ -92,20 +100,32 @@ main{
 
 
 .slides .image-wraper:first-of-type .image-single{
-    background-image: url(../imagens/image-product-1-thumbnail.jpg);
+    background-image: url(../imagens/image-product-1.jpg);
 }
 
 .slides .image-wraper:nth-of-type(2) .image-single{
-    background-image: url(../imagens/image-product-2-thumbnail.jpg);
+    background-image: url(../imagens/image-product-2.jpg);
 }
 
 .slides .image-wraper:nth-of-type(3) .image-single{
-    background-image: url(../imagens/image-product-3-thumbnail.jpg);
+    background-image: url(../imagens/image-product-3.jpg);
 }
 
 
 .slides .image-wraper:last-of-type .image-single{
-    background-image: url(../imagens/image-product-4-thumbnail.jpg);
+    background-image: url(../imagens/image-product-4.jpg);
+}
+
+.image-single .overlay{
+    display:none;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius:7px;
+    background-color: rgba(196, 196, 196, 0.6);
+    z-index: 1;
 }
 
 
@@ -225,9 +245,6 @@ main{
 .cart:hover{
     background-color:#ee761a;
 }
-
-/*Obs:
-    Decidir se a font-weight via ser bold ou outra*/
 
 .cart p{
     font-weight:500;
