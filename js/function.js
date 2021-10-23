@@ -23,19 +23,26 @@ $(function(){
         var TextValue = value.text();
         var current = TextValue;
 
-        if(TextValue != '0'){
-            less.click(function(){
-                console.log('menos');
-                eval(TextValue + current--);
-                value.text(eval(TextValue - current))
-            })
-        }
 
-        more.click(function(){
+        more.click(function(numb2){
             console.log('mais');
-            eval(TextValue + current++);
-            value.text(eval(TextValue + current))
+            var numb = eval(value.text())
+            value.text(numb + 1);
+
+            less.click(function(eval(value.text())){
+                var numb2 = eval(value.text())
+                console.log(numb2)
+                
+                if(numb2 >= 0){
+                    value.text(numb2 - 1)
+                
+                }else if(numb2 < 0){
+                    value.text(0);
+                    
+                }
+            })    
         })
+
     }
 })
 
