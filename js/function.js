@@ -4,6 +4,7 @@ $(function(){
     //Funcões
     slide();
     amount();
+    addCart();
 
     function slide(){
         $('.image-single').click(function(){
@@ -16,35 +17,48 @@ $(function(){
         })
     }
 
+
+
     function amount(){
         var less = $('.amount p:first-of-type');
         var more = $('.amount p:last-of-type');
         var value = $('.amount p:nth-of-type(2)');
-        var TextValue = value.text();
-        var current = TextValue;
+        var numb = eval(value.text())
 
 
-        more.click(function(numb2){
-            console.log('mais');
-            var numb = eval(value.text())
+        more.click(function(){
+            numb = eval(value.text()) 
+            console.log(numb)
             value.text(numb + 1);
+    
+        })
 
-            less.click(function(eval(value.text())){
-                var numb2 = eval(value.text())
-                console.log(numb2)
-                
-                if(numb2 >= 0){
-                    value.text(numb2 - 1)
-                
-                }else if(numb2 < 0){
-                    value.text(0);
-                    
-                }
-            })    
+        less.click(function(){
+            if(numb <= 0){
+                // less.click(function(){
+                     numb = eval(value.text());
+                     console.log(numb);
+                     value.text(0)
+                     console.log('menor')
+               //  })
+             }
+             else if(numb >= 1){
+                 //less.click(function(){
+                     numb = eval(value.text());
+                     console.log(numb);
+                     value.text(numb - 1);
+                     console.log('maior')
+                 //})
+             }
         })
 
     }
+
+    function addCart(){
+        $('.car').click(function(){
+            $('.car > svg').css('stroke','#f3791c');
+        })
+
+        $()
+    }
 })
-
-
-//Não consego subtrair usando o less
