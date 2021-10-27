@@ -59,6 +59,18 @@ $(function(){
             $('.car > svg').css('stroke','#f3791c');
         })
 
-        $()
+        $('.cart').click(function(){
+            $('.cart-wraper > span:nth-of-type(2)').html($('.amount p:nth-of-type(2)').text());
+
+           var total = eval($('.amount p:nth-of-type(2)').text() + '*' +'125.00');
+
+           var totalUSD = total.toLocaleString('USD',{style: 'currency', currency: 'USD'});
+
+           $('.cart-wraper > span:last-of-type').html(totalUSD.substr(2,10));
+
+           $('.cart-amount').html($('.amount p:nth-of-type(2)').text())
+           $('.cart-amount').fadeIn();
+
+        })
     }
 })

@@ -41,6 +41,34 @@ header .user-wraper{
     margin:0 20px;
 }
 
+.cart-amount{
+    display:none;
+    width:15px;
+    height:15px;
+    line-height: 15px;
+    font-size:13px;
+    border-radius:calc(15px / 2);
+    background-color: #f3791c;
+    color:white;
+    position: absolute;
+    top:-3px;
+    left:225px;
+    text-align:center;
+}
+
+.list{
+    display: none;
+    width:100%;
+    max-width:250px;
+    padding:10px;
+    position: absolute;
+    right:-8%;
+    background-color: white;
+    top: 37px;
+    border:1px solid rgba(228, 228, 228, 0.6);
+    box-shadow:0 10px 10px rgba(51, 51, 51, 0.514);
+}
+
 .user-wraper .profile{
     width:35px ;
     height:35px;
@@ -205,6 +233,7 @@ main{
     width:100%;
     display:flex;
     align-items: center;
+    user-select: none;
 }
 
 .amount{
