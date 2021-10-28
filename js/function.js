@@ -8,7 +8,7 @@ $(function(){
 
     function slide(){
         $('.image-single').click(function(){
-            var backgroundCurrent = $(this).css('background-image');
+            let backgroundCurrent = $(this).css('background-image');
             var overlay = $(this).find('.overlay');
             
             $('.overlay').fadeOut();
@@ -55,17 +55,27 @@ $(function(){
     }
 
     function addCart(){
+
         $('.car').click(function(){
             $('.car > svg').css('stroke','#f3791c');
         })
 
-        $('.cart').click(function(){
-            $('.cart-wraper > span:nth-of-type(2)').html($('.amount p:nth-of-type(2)').text());
 
-           var total = eval($('.amount p:nth-of-type(2)').text() + '*' +'125.00');
+        $('.cart').click(function(){
+            let backgroundCurrent = $('.image-single:first-of-type').css('background-image');
+            /*Para pode tornar automatico quando faz ser a single page*/
+            $('.img-cart').css('background-image',backgroundCurrent).css('background-position','center').css('background-size','contain')
+            $('.valueSingle').html($('.price-discount > p:first-of-type').text()
+            );
+
+            /**/
+            $('.cart-wraper > span:nth-of-type(3)').html($('.amount p:nth-of-type(2)').text());
+
+           var total = eval($('.amount p:nth-of-type(2)').text() + '*' + $('.valueSingle').text().substr(1,20));
 
            var totalUSD = total.toLocaleString('USD',{style: 'currency', currency: 'USD'});
 
+           $('.cart-wraper span:nth-of-type(2)').html('x');
            $('.cart-wraper > span:last-of-type').html(totalUSD.substr(2,10));
 
            $('.cart-amount').html($('.amount p:nth-of-type(2)').text())
@@ -73,4 +83,6 @@ $(function(){
 
         })
     }
+
+
 })
