@@ -57,9 +57,9 @@ header .user-wraper{
 }
 
 .list-wraper{
-    display: block;
+    display: none;
     width:100%;
-    max-width:250px;
+    max-width:270px;
     position: absolute;
     right:-8%;
     background-color: white;
@@ -71,7 +71,7 @@ header .user-wraper{
 }
 
 .list-wraper .list{
-    margin-bottom:20px;
+    margin-bottom:5px;
 }
 
 .list h6{
@@ -84,7 +84,7 @@ header .user-wraper{
 .img-title{
     width: 100%;
     display:flex;
-    padding: 1px 16px 16px 16px;
+    padding: 1px 8px 16px 8px;
     color:rgba(0,0,0,.55);
     text-transform: capitalize;
     align-items: center;
@@ -97,14 +97,30 @@ header .user-wraper{
     margin-right: 8px;
 }
 
-.img-title p{
+.info-cart > p{
+    width:100%;
     position:relative;
     top:8px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
-.cart-wraper span:last-of-type{
+.p-wraper{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    font-size:13px;
+}
+
+.p-wraper p:last-of-type{
     font-weight:bold;
+}
+
+.list input[type="button"]{
+    width:100%;
+    text-align: center;
+    color:white;
+    border: 0;
+    background-color: #f3791c;
 }
 
 .user-wraper .profile{
