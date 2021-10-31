@@ -73,6 +73,8 @@ $(function(){
             $('.p-wraper  p:nth-of-type(2)').html('x');
             $('.cart-amount').html($('.amount p:nth-of-type(2)').text())
             $('.cart-amount').fadeIn();
+            $('.list svg').fadeIn();
+            $('.list input[type="button"]').fadeIn();
             $('.p-wraper > p:nth-of-type(3)').html($('.amount p:nth-of-type(2)').text());
             /**/
 
@@ -84,34 +86,42 @@ $(function(){
            $('.p-wraper  p:last-of-type').html(totalUSD.substr(2,10));
            /**/ 
 
-           /*Fazer a janela de lista de compras aparecer e deseparecer*/ 
-           $('.car > svg').click(function(){
-            $('.list-wraper').fadeIn();
 
-                if($('.list-wraper').fadeIn() !== false){
-                    $('.car svg').click(function(){
-                        $('.list-wraper').fadeOut();
-                    })
-                }else{
+        })
+
+        /*Fazer a janela de lista de compras aparecer e deseparecer*/ 
+        $('.car > svg').click(function(){
+            if($('.list-wraper').css('display') == 'none'){
+                $('.list-wraper').fadeIn();
+            
+            }
+            else if($('.list-wraper').css('display') == 'block' ){
+                $('.list-wraper').fadeOut();
+            }
+
+            console.log( $('.cart-amount').html())
+
+            if(true){
+                if( $('.cart-amount').html() == '0'){
+                    $('.cart-wraper').html('o')
                 }
+            }
+
            })
            /**/
 
-        })
     }
+
 
 
 })
 
 /*OBS:
-        *Arrumar o problema de fadeIn e fadeOut na list-wraper.
-
-        *Ajustar o input button e o icon da lixeira.
-
         *Colocar que quando a list estiver vazia aparecer "Your cart is empty".
 
         *Quando adiciona mais de um lista os valores onde tem o titulo, x e o 
         resultado somem.
-        *E ajuste na estilização da lista modal.
+
+        *remove item clicando no lixo
         
 */ 

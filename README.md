@@ -25,5 +25,11 @@ width="150" height="300">
 <br/>
 
 ## Tecnologias
+<br/>
 
+<br/>
+
+<br/>
+
+<br/>
 
