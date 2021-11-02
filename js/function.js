@@ -5,6 +5,7 @@ $(function(){
     slide();
     amount();
     addCart();
+    addCart_item();
 
     function slide(){
         $('.image-single').click(function(){
@@ -52,6 +53,7 @@ $(function(){
              }
         })
 
+
     }
 
     function addCart(){
@@ -59,7 +61,6 @@ $(function(){
         /*$('.car').click(function(){
             $('.car > svg').css('stroke','#f3791c');
         })*/
-
 
         $('.cart').click(function(){
             let backgroundCurrent = $('.image-single:first-of-type').css('background-image');
@@ -86,11 +87,47 @@ $(function(){
            $('.p-wraper  p:last-of-type').html(totalUSD.substr(2,10));
            /**/ 
 
+           if(true){
+            if( $('.cart-amount').html() == '0'){
+                $('.list').append('<p class="empty">Your cart is empty.</p>');
+                $('.empty').eq(1).remove();
+                setTimeout(function(){
+                    $('.cart-wraper').fadeOut();
+                   },1000)
+                setTimeout(function(){
+                $('.empty').fadeIn();
+                },2000)
 
+            }
+            if( $('.cart-amount').html() !== '0'){
+                setTimeout(function(){
+                    $('.empty').fadeOut();
+                   },1000)
+                setTimeout(function(){
+                    $('.cart-wraper').fadeIn();
+                },2000)
+            }
+        }
+
+        $('.img-title svg').click(function(){
+            setTimeout(function(){
+                $('.cart-wraper').fadeOut();
+               },1000)
+            setTimeout(function(){
+            $('.empty').fadeIn();
+            },2000)
+            
         })
 
-        /*Fazer a janela de lista de compras aparecer e deseparecer*/ 
-        $('.car > svg').click(function(){
+           
+        })
+
+        
+    }
+
+    function addCart_item(){
+         /*Fazer a janela de lista de compras aparecer e deseparecer*/ 
+         $('.car > svg').click(function(){
             if($('.list-wraper').css('display') == 'none'){
                 $('.list-wraper').fadeIn();
             
@@ -98,18 +135,30 @@ $(function(){
             else if($('.list-wraper').css('display') == 'block' ){
                 $('.list-wraper').fadeOut();
             }
+        })
 
-            console.log( $('.cart-amount').html())
 
-            if(true){
-                if( $('.cart-amount').html() == '0'){
-                    $('.cart-wraper').html('o')
-                }
+        if(true){
+            if( $('.cart-amount').html() == '0'){
+                $('.list').append('<p class="empty">Your cart is empty.</p>');
+                $('.empty').eq(1).remove();
+                setTimeout(function(){
+                    $('.cart-wraper').fadeOut();
+                   },1000)
+                setTimeout(function(){
+                $('.empty').fadeIn();
+                },2000)
+
             }
-
-           })
-           /**/
-
+            if( $('.cart-amount').html() !== '0'){
+                setTimeout(function(){
+                    $('.empty').fadeOut();
+                   },1000)
+                setTimeout(function(){
+                    $('.cart-wraper').fadeIn();
+                },2000)
+            }
+        }    
     }
 
 
@@ -117,11 +166,11 @@ $(function(){
 })
 
 /*OBS:
-        *Colocar que quando a list estiver vazia aparecer "Your cart is empty".
+        
 
         *Quando adiciona mais de um lista os valores onde tem o titulo, x e o 
-        resultado somem.
+        resultado somem. (MAIS DIFICIL)
 
-        *remove item clicando no lixo
+        *Criar janela modal de slide
         
 */ 
