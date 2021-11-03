@@ -172,5 +172,9 @@ $(function(){
         resultado somem. (MAIS DIFICIL)
 
         *Criar janela modal de slide
+
+        *Aplicar resposividade
+
+        *Criar pagina pricinpal (MAIS DEMORADO)
         
 */ 
