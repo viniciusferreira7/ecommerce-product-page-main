@@ -6,6 +6,7 @@ $(function(){
     amount();
     addCart();
     addCart_item();
+    modalSlide();
 
     function slide(){
         $('.image-single').click(function(){
@@ -159,6 +160,16 @@ $(function(){
                 },2000)
             }
         }    
+    }
+
+    function modalSlide(){
+        $('.main-image').click(function(){
+            $('.modalSlides').fadeIn();
+
+            $('.close').click(function(){
+                $('.modalSlides').fadeOut();
+            })
+        })
     }
 
 
