@@ -163,12 +163,29 @@ $(function(){
     }
 
     function modalSlide(){
+     
+
         $('.main-image').click(function(){
+            //Variaveis
+            var indexAtual = $('.imgSingle_modal').index();
+            console.log(indexAtual)
+
+            //Funções
+            slides();
+
+            let thisbackground = $(this).css('background-image');
+            $('.imgModal').css('background-image',thisbackground);
             $('.modalSlides').fadeIn();
 
             $('.close').click(function(){
                 $('.modalSlides').fadeOut();
             })
+
+            function slides(){
+                $('.arrow').click(function(){
+                    
+                })
+            }
         })
     }
 
