@@ -1,12 +1,6 @@
 html,body{
     height:100%;
 }
-header{
-    width:100%;
-    position: fixed;
-    background-color: white;
-    z-index:2;
-}
 
 header .container{
     border-bottom: 1px solid rgba(228, 228, 228, 0.6) !important ;
@@ -24,11 +18,20 @@ header .navbar-brand:first-of-type{
     margin-right:70px;
 }
 
+.navbar>.container-fluid{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius:5px;
+}
+
 header .navbar-nav a{
     margin-right:20px;
     padding-bottom: 15px;
     position: relative;
-    top: 4px;
+    top: 8px;
+    left:10px;
 }
 
 header .navbar-nav a:hover{
@@ -174,11 +177,11 @@ header .user-wraper{
     border: 3px solid #f3791c;
 }
 
-main{
-    padding-top:8% ;
-}
-
 /*Galeria*/
+
+main{
+    padding-top:28px;
+}
 
 .gallery{
     width:100%;
@@ -378,7 +381,7 @@ main{
 .modalSlides{
     display: none;
     width:100%;
-    height:100%;
+    height:105%;
     top: 0;
     left: 0;
     position: absolute;
@@ -413,8 +416,8 @@ main{
 }
 
 .arrowLeft{
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     position: absolute;
     top:0;
     left:-235px;
@@ -429,8 +432,8 @@ main{
 }
 
 .arrowRight{
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     position: relative;
     top:0;
     left:235px;
@@ -445,6 +448,7 @@ main{
 
 .arrowLeft:hover, .arrowRight:hover{
     background-image: url(../imagens/righthover.png);
+    border:2px solid #f3791c;
 }
 
 .modalSlides .imgModal{
@@ -500,6 +504,7 @@ main{
 }
 
 @media screen and (max-width:1200px){
+    
     .cart-amount{
         left:64%;
     }
@@ -523,17 +528,22 @@ main{
     }
 
     .menuMobile{
-        position: relative;
-        left:-400px;
-        top: 0;
+        position: absolute;
+        top:18px;
+        left:-21px;
     }
 
     .cart-amount{
         left:30%;
     }
 
-    main{
-        padding-top:12% ;
+    .list-wraper{
+        display: none;
+        max-width:none;
+        min-width:320px;
+        right:0;
+        transform: translateX(-10%);
+        max-height:280px;
     }
 
     .main-image{
@@ -592,11 +602,11 @@ main{
 }
 
 @media screen and (max-width:768px){
-    .menuMobile{
+    /*.menuMobile{
         position: relative;
-        left:-44px;
-        top: -45px;
-    }
+        left:-270px;
+        top:0;
+    }*/
 /*
     .list-wraper{
     display: none;
@@ -608,10 +618,19 @@ main{
     top: 36px;
 }
 */
-    main{
-        padding-top:15% ;
-    }
 
 }
 
+@media screen and (max-width:590px){
+    .navbar-toggler-icon{
+        width:0.8em !important;
+        height:1.0em !important;
+    }
+
+    .menuMobile{
+        position: absolute;
+        top:20px;
+        left:-9px;
+    }
+}
 

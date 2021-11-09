@@ -198,6 +198,9 @@ $(function(){
                             if(indexAtual > 3){
                                 indexAtual = -1;
                             }
+                            $('.imgSingle_modal').find('.overlayModal').fadeOut();
+                            $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
+
                         })
     
                         $('.arrowLeft').click(function(){
@@ -208,6 +211,8 @@ $(function(){
                             if(indexAtual < 0){
                                 indexAtual = 3;
                             }
+                            $('.imgSingle_modal').find('.overlayModal').fadeOut();
+                            $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
                         })
                     }    
                
@@ -248,11 +253,8 @@ $(function(){
         *Quando adiciona mais de um lista os valores onde tem o titulo, x e o 
         resultado somem. (MAIS DIFICIL)
 
-        *Criar janela modal de slide
-
         *Aplicar resposividade
             -Problema de resposividade com uso da modalSlides
-            -Centralizar o carrinho
 
         *Criar pagina pricinpal (MAIS DEMORADO)
         
