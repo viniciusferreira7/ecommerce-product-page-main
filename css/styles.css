@@ -510,6 +510,31 @@ main{
     }
 }
 
+@media screen and (max-width:1008px){
+    .close{
+         top:-965%;
+    }
+
+    .arrowLeft, .arrowRight{
+        top:-220px;
+    }
+
+    .modalSlides .imgModal{
+        width:100%;
+        max-width:450px;
+        padding:calc(100% * 0.25);
+        border-radius: 10px;
+        position: absolute;
+        top:25%;
+    }
+    
+    .modalWraper{
+        width:100%;
+        max-width:450px;
+        top:45%;
+    }
+}
+
 @media screen and (max-width:992px){
     
     header .navbar-nav a{
@@ -632,5 +657,21 @@ main{
         top:20px;
         left:-9px;
     }
+
+    .close{
+        top:-905%;
+   }
+
+   .arrowLeft{
+        left:-180px;
+   }
+
+   .arrowRight{
+       left:180px;
+   }
+
+   .modalWraper{
+        top:41%;
+   }
 }
 

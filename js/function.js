@@ -6,6 +6,7 @@ $(function(){
     amount();
     addCart();
     addCart_item();
+    modalSlide();
     
 
     function slide(){
@@ -162,88 +163,77 @@ $(function(){
         }    
     }
 
-    var windowSize = $(window).width();
-
-    
-    if( windowSize >= 1366){
-        modalSlide();
-        console.log('ola');
-
-        function modalSlide(){
+    function modalSlide(){
      
 
-            $('.main-image').click(function(){
-                //Variaveis
-                var indexAtual = 0;
-    
-                    /*Funções*/
-                    slides();
-                    imgDinamico();
-    
-                    //Pega a image do img-single e colocar no imgSingle_modal
-                    function imgDinamico(){
-                        $('.imgSingle_modal').eq(0).css('background-image',$('.image-single').eq(0).css('background-image'));    
-                        $('.imgSingle_modal').eq(1).css('background-image',$('.image-single').eq(1).css('background-image'));    
-                        $('.imgSingle_modal').eq(2).css('background-image',$('.image-single').eq(2).css('background-image'));    
-                        $('.imgSingle_modal').eq(3).css('background-image',$('.image-single').eq(3).css('background-image'));    
-                    }
-    
-                    //Alterar image clicando na seta
-                    function slides(){
-                        $('.arrowRight').click(function(){
-                            indexAtual++;
-                            console.log('mais ' + indexAtual)
-                            let thisbackground = $('.imgSingle_modal').eq(indexAtual).css('background-image');
-                            $('.imgModal').css('background-image', thisbackground);
-                            if(indexAtual > 3){
-                                indexAtual = -1;
-                            }
-                            $('.imgSingle_modal').find('.overlayModal').fadeOut();
-                            $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
+        $('.main-image').click(function(){
+            //Variaveis
+            var indexAtual = 0;
 
-                        })
-    
-                        $('.arrowLeft').click(function(){
-                            indexAtual-=1;
-                            console.log('Menos ' + indexAtual)
-                            let thisbackground = $('.imgSingle_modal').eq(indexAtual).css('background-image');
-                            $('.imgModal').css('background-image', thisbackground);
-                            if(indexAtual < 0){
-                                indexAtual = 3;
-                            }
-                            $('.imgSingle_modal').find('.overlayModal').fadeOut();
-                            $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
-                        })
-                    }    
+                /*Funções*/
+                slides();
+                imgDinamico();
+
+                //Pega a image do img-single e colocar no imgSingle_modal
+                function imgDinamico(){
+                    $('.imgSingle_modal').eq(0).css('background-image',$('.image-single').eq(0).css('background-image'));    
+                    $('.imgSingle_modal').eq(1).css('background-image',$('.image-single').eq(1).css('background-image'));    
+                    $('.imgSingle_modal').eq(2).css('background-image',$('.image-single').eq(2).css('background-image'));    
+                    $('.imgSingle_modal').eq(3).css('background-image',$('.image-single').eq(3).css('background-image'));    
+                }
+
+                //Alterar image clicando na seta
+                function slides(){
+                    $('.arrowRight').click(function(){
+                        indexAtual++;
+                        console.log('mais ' + indexAtual)
+                        let thisbackground = $('.imgSingle_modal').eq(indexAtual).css('background-image');
+                        $('.imgModal').css('background-image', thisbackground);
+                        if(indexAtual > 3){
+                            indexAtual = -1;
+                        }
+                        $('.imgSingle_modal').find('.overlayModal').fadeOut();
+                        $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
+
+                    })
+
+                    $('.arrowLeft').click(function(){
+                        indexAtual-=1;
+                        console.log('Menos ' + indexAtual)
+                        let thisbackground = $('.imgSingle_modal').eq(indexAtual).css('background-image');
+                        $('.imgModal').css('background-image', thisbackground);
+                        if(indexAtual < 0){
+                            indexAtual = 3;
+                        }
+                        $('.imgSingle_modal').find('.overlayModal').fadeOut();
+                        $('.imgSingle_modal').eq(indexAtual).find('.overlayModal').fadeIn();
+                    })
+                }    
+           
+            $('.imgSingle_modal').click(function(){
+
+                /*Trocar de imagem principal com base na imgSinle_modal*/ 
+               let thisbackground =  $(this).css('background-image');
+               $('.imgModal').css('background-image', thisbackground);
+                
+               /*Aplicar o overlay nas img menores*/
+               $('.overlayModal').fadeOut();
+               $(this).find('.overlayModal').fadeIn();
+               /**/
                
-                $('.imgSingle_modal').click(function(){
-    
-                    /*Trocar de imagem principal com base na imgSinle_modal*/ 
-                   let thisbackground =  $(this).css('background-image');
-                   $('.imgModal').css('background-image', thisbackground);
-                    
-                   /*Aplicar o overlay nas img menores*/
-                   $('.overlayModal').fadeOut();
-                   $(this).find('.overlayModal').fadeIn();
-                   /**/
-                   
-                })
-    
-                /*Pegar a imagem do main-image  e colocar no imgModal*/ 
-                let thisbackground = $(this).css('background-image');
-                $('.imgModal').css('background-image',thisbackground);
-                $('.modalSlides').fadeIn();
-    
-                $('.close').click(function(){
-                    $('.modalSlides').fadeOut();
-                })
-    
             })
-        }
-    }/*else if($('.modalSlides').css('display') == 'block' && windowSize < 1366){
-        $('.modalSlides').fadeOut();
-        console.log('menos')
-    }*/
+
+            /*Pegar a imagem do main-image  e colocar no imgModal*/ 
+            let thisbackground = $(this).css('background-image');
+            $('.imgModal').css('background-image',thisbackground);
+            $('.modalSlides').fadeIn();
+
+            $('.close').click(function(){
+                $('.modalSlides').fadeOut();
+            })
+
+        })
+    }
 
 })
 
@@ -253,9 +243,8 @@ $(function(){
         *Quando adiciona mais de um lista os valores onde tem o titulo, x e o 
         resultado somem. (MAIS DIFICIL)
 
-        *Aplicar resposividade
-            -Problema de resposividade com uso da modalSlides
+        *Criar pagina pricinpal (MAIS DEMORADO).
 
-        *Criar pagina pricinpal (MAIS DEMORADO)
+        *Converter tudo para o React no sabado (VAI DEMORAR O DIA TODO)
         
 */ 
