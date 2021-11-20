@@ -86,7 +86,7 @@ $(function(){
 
            var totalUSD = total.toLocaleString('USD',{style: 'currency', currency: 'USD'});
 
-           $('.p-wraper  p:last-of-type').html(totalUSD.substr(2,10));
+           $('.p-wraper  p:last-of-type').html('$'+totalUSD.substr(0,7));
            /**/ 
 
            if(true){
