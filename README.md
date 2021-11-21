@@ -23,10 +23,13 @@ width="150" height="300">
 
 ## Tecnologias
 <br/>
-
+HTML5
 <br/>
-
+CSS3
 <br/>
-
+JavaScript
 <br/>
+jQuery
+<br/>
+Bootstrap
 
