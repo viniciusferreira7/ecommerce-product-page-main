@@ -398,8 +398,8 @@ main{
 
 .close{
     position: absolute;
-    top:-240px;
-    left:225px;
+    top:-280px;
+    left:250px;
     width:35px;
     height:35px;
     border-radius:calc(35px / 2);
@@ -462,7 +462,7 @@ main{
     transform: translate(-50%,-50%);
    /* background-image: url(../imagens/image-product-1.jpg);*/
     background-position: center;
-    background-size: cover;
+    background-size: cover;]margin-bottom: ;
 }
 
 .modalWraper{
@@ -624,6 +624,11 @@ main{
         height: 200%;
     }
 
+    .close{
+        top:-500px;
+        left:240px;
+    }
+
 }
 
 @media screen and (max-width:768px){
@@ -659,7 +664,8 @@ main{
     }
 
     .close{
-        top:-905%;
+        top:-930%;
+        left:220px;
    }
 
    .arrowLeft{
@@ -673,5 +679,10 @@ main{
    .modalWraper{
         top:41%;
    }
+
+   .imgModal{
+       padding: 10px;
+   }
+
 }
 

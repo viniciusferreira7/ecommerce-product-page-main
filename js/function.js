@@ -84,9 +84,9 @@ $(function(){
             /*Calculo automatico do valor vezes a quantidade*/
            var total = eval($('.amount p:nth-of-type(2)').text() + '*' + $('.valueSingle').text().substr(1,20));
 
-           var totalUSD = total.toLocaleString('USD',{style: 'currency', currency: 'USD'});
+           var totalUSD = total.toLocaleString('USD',{style: 'currency', currency: 'USD', currencyDisplay:'symbol'});
 
-           $('.p-wraper  p:last-of-type').html(totalUSD.substr(2,10));
+           $('.p-wraper  p:last-of-type').html('$' + totalUSD.substr(0,7));
            /**/ 
 
            if(true){
